@@ -24,4 +24,16 @@ Ireadline.question('Informe seu nome/nickname: ', (nome) => {
 			enviarMensagem();
 		});
 	};
+	socket.on('connect', () => {
+        console.log('Você está conectado!')
+        enviarMensagem()
+    })
+
+    socket.on('chat', (mensagem) => {
+        console.log(mensagem)
+    })
+
+    socket.on('disconnect', () => {
+        console.log('Saindo da conversa.')
+    })
 });
